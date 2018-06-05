@@ -1,0 +1,388 @@
+S1-NYTA-ClaimPro->  ^
+S1-NYTA-ClaimPro-> get config
+Total Config size 15939:
+unset key protection enable
+set clock ntp
+set clock timezone -6
+set clock dst recurring start-weekday 2 0 3 02:00 end-weekday 1 0 11 02:00
+set vrouter trust-vr sharable
+set vrouter "untrust-vr"
+exit
+set vrouter "trust-vr"
+unset auto-route-export
+exit
+set service "RDP" protocol tcp src-port 0-65535 dst-port 0-3389 timeout 60
+set service "tcp5723" protocol tcp src-port 0-65535 dst-port 0-5723
+set service "tcp51909" protocol tcp src-port 0-65535 dst-port 0-51909
+set service "tcp53" protocol tcp src-port 0-65535 dst-port 0-53
+set service "udp53" protocol udp src-port 0-65535 dst-port 0-53
+set service "udp389" protocol udp src-port 0-65535 dst-port 0-389
+set service "tcp389" protocol tcp src-port 0-65535 dst-port 0-389
+set service "tcp636" protocol tcp src-port 0-65535 dst-port 0-636
+set service "udp636" protocol udp src-port 0-65535 dst-port 0-636
+set service "tcp3268" protocol tcp src-port 0-65535 dst-port 0-3268
+set service "tcp-high-ports" protocol tcp src-port 0-65535 dst-port 1024-65535
+set service "tcp8530" protocol tcp src-port 0-65535 dst-port 0-8530
+set service "tcp54297" protocol tcp src-port 0-65535 dst-port 0-54297
+set service "tcp443" protocol tcp src-port 0-65535 dst-port 0-443
+set service "tcp445" protocol tcp src-port 0-65535 dst-port 0-445
+set service "tcp137" protocol tcp src-port 0-65535 dst-port 0-137
+set service "tcp80" protocol tcp src-port 0-65535 dst-port 0-80
+set service "tcp135" protocol tcp src-port 0-65535 dst-port 0-135
+set service "tcp139" protocol tcp src-port 0-65535 dst-port 0-139
+set service "tcp5985" protocol tcp src-port 0-65535 dst-port 0-5985
+set service "tcp5986" protocol tcp src-port 0-65535 dst-port 0-5986
+set service "tcp8014" protocol tcp src-port 0-65535 dst-port 0-8014
+set service "tcp1688" protocol tcp src-port 0-65535 dst-port 0-1688
+set service "tcp5989" protocol tcp src-port 0-65535 dst-port 0-5989
+set service "tcp138" protocol tcp src-port 0-65535 dst-port 138-138
+set service "tcp1551" protocol tcp src-port 0-65535 dst-port 1551-1551
+set service "tcp2955" protocol tcp src-port 0-65535 dst-port 2955-2955
+set service "tcp2956" protocol tcp src-port 0-65535 dst-port 2956-2956
+unset alg sip enable
+unset alg mgcp enable
+unset alg sccp enable
+unset alg sunrpc enable
+unset alg msrpc enable
+unset alg xing enable
+unset alg tftp enable
+unset alg talk enable
+unset alg sql enable
+unset alg rtsp enable
+unset alg rsh enable
+unset alg real enable
+unset alg appleichat enable
+unset alg appleichat re-assembly enable
+unset alg dns enable
+unset alg http enable
+unset alg h323 enable
+unset alg sctp enable
+set auth-server "Local" id 0
+set auth-server "Local" server-name "Local"
+set auth default auth server "Local"
+set auth radius accounting port 1646
+set admin name "netscreen"
+set admin password "nHNDBjrWBRrNc1tCesUPZtBtJ0FGan"
+set admin manager-ip 172.16.0.0 255.240.0.0
+set admin manager-ip 12.10.115.129
+set admin http redirect
+set admin auth web timeout 10
+set admin auth dial-in timeout 3
+set admin auth server "Local"
+set admin format dos
+set zone "Trust" vrouter "trust-vr"
+set zone "Untrust" vrouter "trust-vr"
+set zone "DMZ" vrouter "trust-vr"
+set zone "VLAN" vrouter "trust-vr"
+set zone "Untrust-Tun" vrouter "trust-vr"
+unset zone "Trust" tcp-rst
+unset zone "Untrust" block
+unset zone "Untrust" tcp-rst
+unset zone "V1-Trust" tcp-rst
+unset zone "V1-Untrust" tcp-rst
+set zone "DMZ" tcp-rst
+unset zone "V1-DMZ" tcp-rst
+unset zone "VLAN" tcp-rst
+set zone "Untrust" screen icmp-flood
+set zone "Untrust" screen udp-flood
+set zone "Untrust" screen winnuke
+set zone "Untrust" screen port-scan
+set zone "Untrust" screen ip-sweep
+set zone "Untrust" screen tear-drop
+set zone "Untrust" screen syn-flood
+set zone "Untrust" screen ping-death
+set zone "Untrust" screen ip-filter-src
+set zone "Untrust" screen land
+set zone "Untrust" screen syn-frag
+set zone "Untrust" screen tcp-no-flag
+set zone "Untrust" screen unknown-protocol
+set zone "Untrust" screen ip-bad-option
+set zone "Untrust" screen ip-record-route
+set zone "Untrust" screen ip-timestamp-opt
+set zone "Untrust" screen ip-security-opt
+set zone "Untrust" screen ip-loose-src-route
+set zone "Untrust" screen ip-strict-src-route
+set zone "Untrust" screen ip-stream-opt
+set zone "Untrust" screen icmp-fragment
+set zone "Untrust" screen icmp-large
+set zone "Untrust" screen syn-fin
+set zone "Untrust" screen fin-no-ack
+set zone "Untrust" screen limit-session source-ip-based
+set zone "Untrust" screen syn-ack-ack-proxy
+set zone "Untrust" screen block-frag
+set zone "Untrust" screen limit-session destination-ip-based
+set zone "Untrust" screen component-block zip
+set zone "Untrust" screen component-block jar
+set zone "Untrust" screen component-block exe
+set zone "Untrust" screen component-block activex
+set zone "Untrust" screen icmp-id
+set zone "Untrust" screen tcp-sweep
+set zone "Untrust" screen udp-sweep
+set zone "Untrust" screen ip-spoofing drop-no-rpf-route
+set zone "V1-Untrust" screen tear-drop
+set zone "V1-Untrust" screen syn-flood
+set zone "V1-Untrust" screen ping-death
+ set zone "V1-Untrust" screen ip-filter-src
+set zone "V1-Untrust" screen land
+set interface "ethernet0/0" zone "Untrust"
+set interface "ethernet0/1" zone "Null"
+set interface "ethernet0/2" zone "Trust"
+set interface "ethernet0/5" zone "DMZ"
+set interface "bgroup0" zone "Null"
+set interface "tunnel.1" zone "Untrust"
+set interface "loopback.2" zone "Trust"
+unset interface vlan1 ip
+set interface ethernet0/0 ip 12.10.115.87/24
+set interface ethernet0/0 route
+set interface ethernet0/2 ip 172.16.116.10/25
+set interface ethernet0/2 route
+set interface ethernet0/5 ip 10.127.254.1/29
+set interface ethernet0/5 route
+set interface loopback.2 ip 9.9.9.9/32
+set interface loopback.2 route
+set interface tunnel.1 ip unnumbered interface ethernet0/0
+set interface "ethernet0/0" pmtu ipv4
+set interface "ethernet0/2" pmtu ipv4
+set interface "ethernet0/5" pmtu ipv4
+unset interface vlan1 bypass-others-ipsec
+unset interface vlan1 bypass-non-ip
+set interface ethernet0/0 ip manageable
+set interface ethernet0/2 ip manageable
+unset interface ethernet0/5 ip manageable
+set interface loopback.2 ip manageable
+set interface ethernet0/0 manage ping
+set interface ethernet0/0 manage web
+unset interface ethernet0/2 manage telnet
+set interface "ethernet0/2" mip 172.16.116.11 host 10.127.254.2 netmask 255.255.255.255 vr "trust-vr"
+set interface "tunnel.1" mip 10.9.30.59 host 10.127.254.2 netmask 255.255.255.255 vr "trust-vr"
+set interface "serial0/0" modem settings "USR" init "AT&F"
+set interface "serial0/0" modem settings "USR" active
+set interface "serial0/0" modem speed 115200
+set interface "serial0/0" modem retry 3
+set interface "serial0/0" modem interval 10
+set interface "serial0/0" modem idle-time 10
+set interface ethernet0/0 route-deny
+set flow tcp-mss
+unset flow no-tcp-seq-check
+set flow tcp-syn-check
+unset flow tcp-syn-bit-check
+set flow reverse-route clear-text prefer
+set flow reverse-route tunnel always
+set flow log-dropped-packet
+set hostname S1-NYTA-ClaimPro
+set pki authority default scep mode "auto"
+set pki x509 default cert-path partial
+set dns host dns1 0.0.0.0
+set dns host dns2 0.0.0.0
+set dns host dns3 0.0.0.0
+set address "Trust" "ip-172.16.192.184" 172.16.192.184 255.255.255.255
+set address "Trust" "ip-172.16.192.45" 172.16.192.45 255.255.255.255 "site1 informix nydb"
+set address "Trust" "ip-172.16.192.46" 172.16.192.46 255.255.255.255 "site1 informix sundbs2"
+set address "Trust" "ip-172.16.193.240" 172.16.193.240 255.255.255.255
+set address "Trust" "ip-172.16.193.241" 172.16.193.241 255.255.255.255
+set address "Trust" "ip-172.16.193.242" 172.16.193.242 255.255.255.255
+set address "Trust" "ip-172.16.211.154" 172.16.211.154 255.255.255.255
+set address "Trust" "ip-172.16.248.40" 172.16.248.40 255.255.255.255
+set address "Trust" "ip-172.16.248.41" 172.16.248.41 255.255.255.255
+set address "Trust" "ip-172.16.68.31" 172.16.68.31 255.255.255.255
+set address "Trust" "ip-172.16.68.32" 172.16.68.32 255.255.255.255
+set address "Trust" "ip-172.16.68.38" 172.16.68.38 255.255.255.255
+set address "Trust" "ip-172.16.68.40" 172.16.68.40 255.255.255.255
+set address "Trust" "ip-172.16.68.51" 172.16.68.51 255.255.255.255
+set address "Trust" "ip-172.16.68.54" 172.16.68.54 255.255.255.255
+set address "Trust" "ip-172.16.68.60" 172.16.68.60 255.255.255.255
+set address "Trust" "ip-172.16.68.78" 172.16.68.78 255.255.255.255
+set address "Trust" "ip-172.16.68.79" 172.16.68.79 255.255.255.255
+set address "Trust" "ip-192.168.2.21" 192.168.2.21 255.255.255.255
+set address "Trust" "ip-192.168.2.220" 192.168.2.220 255.255.255.255
+set address "Trust" "ip-192.168.2.221" 192.168.2.221 255.255.255.255
+set address "Trust" "ip-192.168.3.31" 192.168.3.31 255.255.255.255
+set address "Trust" "TALX 10.0.0.0" 10.0.0.0 255.0.0.0
+set address "Trust" "TALX 172.16.0.0" 172.16.0.0 255.240.0.0
+set address "Trust" "TALX 192.168.0.0" 192.168.0.0 255.255.0.0
+set address "Untrust" "10.51.169.0/24" 10.51.169.0 255.255.255.0 "new NYTA subnet 2"
+set address "Untrust" "10.51.36.0/24" 10.51.36.0 255.255.255.0 "new NYTA subnet"
+set address "Untrust" "ip-9.9.9.9" 9.9.9.9 255.255.255.255
+set address "Untrust" "net-10.24.45.0-24" 10.24.45.0 255.255.255.0 "NYTA Users"
+set address "Untrust" "net-10.24.49.0-24" 10.24.49.0 255.255.255.0 "NYTA Users"
+set address "Untrust" "net-10.24.50.0-24" 10.24.50.0 255.255.255.0 "NYTA Users"
+set address "DMZ" "10.9.30.59/32" 10.9.30.59 255.255.255.255
+set address "DMZ" "ip-10.127.254.2" 10.127.254.2 255.255.255.255 "Claim Pro Term Server"
+set crypto-policy
+exit
+set ike p1-proposal "pre-g2-aes256-sha1" preshare group2 esp aes256 sha-1 second 28800
+set ike p2-proposal "g2-esp-aes256-sha1" group2 esp aes256 sha-1 second 3600
+set ike gateway "nyta-gateway" address 170.28.128.44 Main outgoing-interface "ethernet0/0" preshare "j+CGQ6TQN6PkxwsH/+CYTA7ggun/OCdRgg==" proposal "pre-g2-aes256-sha1"
+set ike respond-bad-spi 1
+set ike gateway "nyta-gateway" heartbeat hello 1
+set ike gateway "nyta-gateway" heartbeat reconnect 60
+set ike ikev2 ike-sa-soft-lifetime 60
+unset ike ikeid-enumeration
+unset ike dos-protection
+unset ipsec access-session enable
+set ipsec access-session maximum 5000
+set ipsec access-session upper-threshold 0
+set ipsec access-session lower-threshold 0
+set ipsec access-session dead-p2-sa-timeout 0
+unset ipsec access-session log-error
+unset ipsec access-session info-exch-connected
+unset ipsec access-session use-error-log
+set vpn "nyta-vpn" gateway "nyta-gateway" replay tunnel idletime 0 proposal "g2-esp-aes256-sha1"
+set vpn "nyta-vpn" monitor rekey
+set vpn "nyta-vpn" id 0x1 bind interface tunnel.1
+unset interface tunnel.1 acvpn-dynamic-routing
+unset alg ftp enable
+set traffic-shaping mode off
+set url protocol websense
+exit
+set policy id 23 from "DMZ" to "Trust"  "ip-10.127.254.2" "ip-172.16.192.45" "tcp1551" permit log
+set policy id 23
+set dst-address "ip-172.16.192.46"
+set service "tcp2955"
+set service "tcp2956"
+exit
+set policy id 22 from "DMZ" to "Trust"  "ip-10.127.254.2" "ip-172.16.193.241" "tcp135" permit log
+set policy id 22
+set dst-address "ip-172.16.193.242"
+set service "tcp137"
+set service "tcp138"
+set service "tcp139"
+set service "tcp445"
+exit
+set policy id 15 from "DMZ" to "Trust"  "ip-10.127.254.2" "ip-172.16.193.240" "tcp-high-ports" permit log
+set policy id 15
+set dst-address "ip-172.16.193.241"
+set dst-address "ip-172.16.193.242"
+set dst-address "ip-172.16.248.40"
+set dst-address "ip-172.16.248.41"
+set dst-address "ip-192.168.2.220"
+set dst-address "ip-192.168.2.221"
+set service "tcp3268"
+set service "tcp389"
+set service "tcp53"
+set service "tcp636"
+set service "udp389"
+set service "udp53"
+set service "udp636"
+exit
+set policy id 16 from "DMZ" to "Trust"  "ip-10.127.254.2" "ip-172.16.68.31" "tcp51909" permit log
+set policy id 16
+set dst-address "ip-172.16.68.32"
+set dst-address "ip-172.16.68.38"
+set dst-address "ip-172.16.68.51"
+set service "tcp5723"
+exit
+set policy id 17 from "DMZ" to "Trust"  "ip-10.127.254.2" "ip-172.16.211.154" "tcp137" permit log
+set policy id 17
+set dst-address "ip-172.16.68.78"
+set dst-address "ip-172.16.68.79"
+set service "tcp443"
+set service "tcp445"
+set service "tcp54297"
+set service "tcp8530"
+exit
+set policy id 18 from "DMZ" to "Trust"  "ip-10.127.254.2" "ip-172.16.68.54" "tcp135" permit log
+set policy id 18
+set service "tcp139"
+set service "tcp443"
+set service "tcp445"
+set service "tcp5985"
+set service "tcp5986"
+set service "tcp80"
+exit
+set policy id 19 from "DMZ" to "Trust"  "ip-10.127.254.2" "ip-172.16.68.40" "tcp8014" permit log
+set policy id 19
+exit
+set policy id 21 from "DMZ" to "Trust"  "ip-10.127.254.2" "ip-172.16.192.184" "tcp1688" permit log
+set policy id 21
+exit
+set policy id 20 from "DMZ" to "Trust"  "ip-10.127.254.2" "ip-172.16.68.60" "SNMP" permit log
+set policy id 20
+set service "tcp5989"
+exit
+set policy id 14 from "DMZ" to "Trust"  "ip-10.127.254.2" "ip-192.168.2.21" "SNMP" permit log
+set policy id 14
+set dst-address "ip-192.168.3.31"
+exit
+set policy id 7 from "Untrust" to "DMZ"  "10.51.169.0/24" "MIP(10.9.30.59)" "ICMP-ANY" permit log
+set policy id 7
+set src-address "10.51.36.0/24"
+set src-address "ip-9.9.9.9"
+set src-address "net-10.24.45.0-24"
+set src-address "net-10.24.49.0-24"
+set src-address "net-10.24.50.0-24"
+set service "RDP"
+exit
+set policy id 5 from "Trust" to "DMZ"  "TALX 10.0.0.0" "MIP(172.16.116.11)" "ANY" permit log
+set policy id 5
+set src-address "TALX 172.16.0.0"
+set src-address "TALX 192.168.0.0"
+set log session-init
+exit
+set policy id 2 from "Trust" to "Trust"  "Any" "Any" "ANY" deny log
+set policy id 2
+exit
+set policy id 1 from "Trust" to "Untrust"  "Any" "Any" "ANY" deny log
+set policy id 1
+set log session-init
+exit
+set policy id 3 from "Untrust" to "Trust"  "Any" "Any" "ANY" deny log
+set policy id 3
+set log session-init
+exit
+set policy id 4 from "Untrust" to "Untrust"  "Any" "Any" "ANY" deny log
+set policy id 4
+exit
+set policy id 6 from "Untrust" to "DMZ"  "Any" "Any" "ANY" deny log
+set policy id 6
+exit
+set policy id 11 from "DMZ" to "Trust"  "Any" "Any" "ANY" deny log
+set policy id 11
+exit
+set policy id 12 from "DMZ" to "Untrust"  "Any" "Any" "ANY" deny log
+set policy id 12
+exit
+set policy id 13 from "DMZ" to "DMZ"  "Any" "Any" "ANY" permit log
+set policy id 13
+exit
+set syslog config "172.16.212.4"
+set syslog config "172.16.212.4" facilities local0 local0
+set syslog config "172.16.212.4" log traffic
+set syslog src-interface ethernet0/2
+set syslog enable
+set firewall log-self
+set nsmgmt bulkcli reboot-timeout 60
+set ssh version v2
+set ssh enable
+set scp enable
+set config lock timeout 5
+unset license-key auto-update
+set telnet client enable
+set ssl encrypt 3des sha-1
+set ntp server "24.56.178.140 "
+set ntp server src-interface "ethernet0/0"
+set ntp server backup1 "172.16.146.3"
+set ntp server backup1 src-interface "ethernet0/2"
+set snmp port listen 161
+set snmp port trap 162
+set snmpv3 local-engine id "0162102010000077"
+set vrouter "untrust-vr"
+exit
+set vrouter "trust-vr"
+unset add-default-route
+set route 0.0.0.0/0 interface ethernet0/2 gateway 172.16.116.1
+set route 170.28.128.42/32 interface ethernet0/0 gateway 12.10.115.254
+set route 10.24.45.0/24 interface tunnel.1
+set route 24.56.178.140/32 interface ethernet0/0 gateway 12.10.115.254
+set route 10.9.30.59/32 interface ethernet0/5 permanent
+set route 170.28.128.44/32 interface ethernet0/0 gateway 12.10.115.254
+set route 10.51.169.0/24 interface tunnel.1
+set route 10.51.36.0/24 interface tunnel.1
+set route 10.24.49.0/24 interface tunnel.1
+exit
+set vrouter "untrust-vr"
+exit
+set vrouter "trust-vr"
+exit
+S1-NYTA-ClaimPro->
+ 
